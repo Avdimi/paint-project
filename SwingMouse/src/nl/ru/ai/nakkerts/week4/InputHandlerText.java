@@ -22,7 +22,9 @@ public class InputHandlerText implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand().equals("Text")) {
+			panel.record(e.getActionCommand());
 			placeText();
+			
 		} else {
 			JComboBox cb = (JComboBox)e.getSource();
 			size = (int)cb.getSelectedItem();
@@ -37,7 +39,7 @@ public class InputHandlerText implements ActionListener {
 			public void mousePressed(java.awt.event.MouseEvent evt) {
 				x1 = evt.getX();
 				y1 = evt.getY();
-				// get text ()
+				panel.record("Pressed Mouse to place Text");
 				int index = panel.getIndex(x1, y1);
 
 				String text = JOptionPane.showInputDialog(panel, "Enter text:",
@@ -47,6 +49,9 @@ public class InputHandlerText implements ActionListener {
 				panel.setTextSize(size);
 				if (text != null){
 				panel.addText(x1, y1, text, index);
+				panel.record("Text Added");
+				} else if (text == null) {
+					panel.record("Cancelled Text Input");
 				}
 				// System.out.println(x1 + "   " + y1);
 			}

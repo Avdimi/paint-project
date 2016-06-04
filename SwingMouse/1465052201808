@@ -1,0 +1,23 @@
+StartTime: 1825368891403604 PassedTime: 0 Activity: Start
+StartTime: 1825372699340930 PassedTime: 3807937326 Activity: Clicked to Place Rectangle
+StartTime: 1825373771405845 PassedTime: 1072064915 Activity: cyan
+StartTime: 1825376053351365 PassedTime: 2281945520 Activity: Pressed Button: Fill
+StartTime: 1825376939214173 PassedTime: 885862808 Activity: magenta
+StartTime: 1825377211290611 PassedTime: 272076438 Activity: Clicked to Fill Shape
+StartTime: 1825379811183060 PassedTime: 2599892449 Activity: Pressed Button: Ellipse
+StartTime: 1825381171266604 PassedTime: 1360083544 Activity: orange
+StartTime: 1825381596232515 PassedTime: 424965911 Activity: Clicked to Place Elipse
+StartTime: 1825384027281457 PassedTime: 2431048942 Activity: Pressed Button: Fill
+StartTime: 1825386451150091 PassedTime: 2423868634 Activity: yellow
+StartTime: 1825386979179603 PassedTime: 528029512 Activity: Clicked to Fill Shape
+StartTime: 1825399171170257 PassedTime: 12191990654 Activity: Pressed Button: Resize
+StartTime: 1825400027411734 PassedTime: 856241477 Activity: Clicked to Resize
+StartTime: 1825401627305784 PassedTime: 1599894050 Activity: Clicked to Resize
+StartTime: 1825403299338049 PassedTime: 1672032265 Activity: Clicked to Resize
+StartTime: 1825406323283825 PassedTime: 3023945776 Activity: Clicked to Resize
+StartTime: 1825407923440351 PassedTime: 1600156526 Activity: Clicked to Resize
+StartTime: 1825410395253993 PassedTime: 2471813642 Activity: Clicked to Resize
+StartTime: 1825413179478890 PassedTime: 2784224897 Activity: Clicked to Resize
+StartTime: 1825413675261355 PassedTime: 495782465 Activity: Clicked to Resize
+StartTime: 1825418259223456 PassedTime: 4583962101 Activity: Pressed End button
+StartTime: 1825418259223456 PassedTime: 49367819852 Activity: Total Time Since Start

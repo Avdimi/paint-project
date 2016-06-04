@@ -5,6 +5,9 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
@@ -17,8 +20,12 @@ public class DrawPanel extends JPanel {
 	private Random rand = new Random();
 	private int index = 0, size = 8, listIndex;
 	private int thickness;
+	private long startTime;
+	private long passedTime;
+	private long eventTime;
+	private long lastEventTime = 0;
 	ArrayList<Drawable> shapesList = new ArrayList<Drawable>();
-	ArrayList<ArrayList<Drawable>> history = new ArrayList <ArrayList<Drawable>>();
+	ArrayList<Record> activityList = new ArrayList<Record>();
 
 	public DrawPanel() {
 		super();
@@ -49,7 +56,7 @@ public class DrawPanel extends JPanel {
 		int B = rand.nextInt(256);
 		Color color = new Color(R, G, B);
 		this.color = color;
-		repaint();
+		repaint(); 
 	}
 
 	public void addRandomShape() {
@@ -398,5 +405,53 @@ public class DrawPanel extends JPanel {
 		this.thickness = thickness;
 		
 	}
+	
+	public void startTime(){
+		this.startTime = System.nanoTime();
+		Record start = new Record(startTime,0,"Start");
+		activityList.add(start);
+	}
+	
+	public void endTime() {
+		this.eventTime = System.nanoTime();
+		Long totaltime = eventTime-startTime;
+		Long sinceLast = eventTime-lastEventTime;
+		Record last = new Record(eventTime,sinceLast,"Pressed End button");
+		Record total = new Record(eventTime,totaltime,"Total Time Since Start");
+		activityList.add(last);
+		activityList.add(total);
+		
+		saveToText(activityList);
+		
+	}
+	
+	private void saveToText(ArrayList<Record> activityList2) {
+		try {
+			PrintWriter writer = new PrintWriter(Long.toString(System.currentTimeMillis()), "UTF-8");
+			for (int i = 0; i < activityList2.size(); i++) {
+				Record temp = activityList2.get(i);
+				writer.println("StartTime: " + temp.getStartTime() + " PassedTime: " + temp.getPassedTime()
+						+ " Activity: " + temp.getActivity());
+			}
+			writer.close();
+		} catch (FileNotFoundException e) {
 
+		} catch (UnsupportedEncodingException e) {
+
+		}
+
+	}
+
+	public void record(String activity){
+		this.eventTime = System.nanoTime();
+		if (this.lastEventTime == 0){
+			this.passedTime = eventTime-startTime; // immers nog geen last event 			
+		} else {
+			this.passedTime = eventTime-lastEventTime;
+		}
+		Record rec = new Record(eventTime, passedTime, activity);
+		activityList.add(rec);
+		lastEventTime = eventTime;
+	}
+	
 }

@@ -34,6 +34,8 @@ public class ButtonPanelColor extends JPanel {
 		JButton button15 = new JButton();
 		JButton button16 = new JButton();
 		JButton button17 = new JButton();
+		JButton start 	= new JButton("Start");
+		JButton end		= new JButton("End");
 		
 		Dimension buttonDim = new Dimension(25, 25);
 		InputHandlerText IHT = new InputHandlerText(panel);
@@ -45,7 +47,9 @@ public class ButtonPanelColor extends JPanel {
 		Color brown = new Color(153,76,0);
 		Color DarkGreen = new Color (0,153,76);
 		Color DarkPurple = new Color (102,0,102);
-
+		
+		start.setPreferredSize(new Dimension(65,20));
+		end.setPreferredSize(new Dimension(65,20));
 		button14.setPreferredSize(new Dimension(40, 40));
 		button16.setPreferredSize(buttonDim);
 		button16.setBackground(DarkGreen);
@@ -97,6 +101,8 @@ public class ButtonPanelColor extends JPanel {
 		button15.setActionCommand("Brown");
 		button16.setActionCommand("DarkGreen");
 		button17.setActionCommand("DarkPurple");
+		start.setActionCommand("Start");
+		end.setActionCommand("End");
 
 		this.setLayout(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
@@ -149,12 +155,20 @@ public class ButtonPanelColor extends JPanel {
 		gbc.gridx = 7;
 		gbc.gridy = 1;
 		add((Component) button12, gbc);
+		gbc.gridx = 10;
+		gbc.gridy = 0;
+		gbc.insets= new Insets(0,100,0,0);
+		add((Component)start,gbc);
+		gbc.gridy = 1;
+		add((Component)end,gbc);
 				
 		gbc.gridx = 8;
 		gbc.gridy = 0;
 		gbc.insets = new Insets(0, 10, 0, 0);
 		gbc.gridheight = 2;
 		add((Component) button14, gbc);
+		
+		
 		
 
 		button14.setEnabled(false);
@@ -177,6 +191,8 @@ public class ButtonPanelColor extends JPanel {
 		button15.addActionListener(IHC);
 		button16.addActionListener(IHC);
 		button17.addActionListener(IHC);
+		start.addActionListener(IHC);
+		end.addActionListener(IHC);
 
 	}
 }

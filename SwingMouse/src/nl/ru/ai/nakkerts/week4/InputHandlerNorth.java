@@ -36,66 +36,86 @@ public class InputHandlerNorth implements ActionListener {
 			color = color.black;
 			panel.setColor(color);
 			mimic.setBackground(color);
+			panel.record(e.getActionCommand());
 		} else if (e.getActionCommand().equals("blue")) {
 			color = color.blue;
 			panel.setColor(color);
 			mimic.setBackground(color);
+			panel.record(e.getActionCommand());
 		} else if (e.getActionCommand().equals("cyan")) {
 			color = color.cyan;
 			panel.setColor(color);
 			mimic.setBackground(color);
+			panel.record(e.getActionCommand());
 		} else if (e.getActionCommand().equals("darkgray")) {
 			color = color.darkGray;
 			panel.setColor(color);
 			mimic.setBackground(color);
+			panel.record(e.getActionCommand());
 		} else if (e.getActionCommand().equals("gray")) {
 			color = color.gray;
 			panel.setColor(color);
 			mimic.setBackground(color);
+			panel.record(e.getActionCommand());
 		} else if (e.getActionCommand().equals("lightgray")) {
 			color = color.lightGray;
 			panel.setColor(color);
 			mimic.setBackground(color);
+			panel.record(e.getActionCommand());
 		} else if (e.getActionCommand().equals("green")) {
 			color = color.green;
 			panel.setColor(color);
 			mimic.setBackground(color);
+			panel.record(e.getActionCommand());
 		} else if (e.getActionCommand().equals("magenta")) {
 			color = color.magenta;
 			panel.setColor(color);
 			mimic.setBackground(color);
+			panel.record(e.getActionCommand());
 		} else if (e.getActionCommand().equals("orange")) {
 			color = color.orange;
 			panel.setColor(color);
 			mimic.setBackground(color);
+			panel.record(e.getActionCommand());
 		} else if (e.getActionCommand().equals("pink")) {
 			color = color.pink;
 			panel.setColor(color);
 			mimic.setBackground(color);
+			panel.record(e.getActionCommand());
 		} else if (e.getActionCommand().equals("red")) {
 			color = color.red;
 			panel.setColor(color);
 			mimic.setBackground(color);
+			panel.record(e.getActionCommand());
 		} else if (e.getActionCommand().equals("yellow")) {
 			color = color.yellow;
 			panel.setColor(color);
 			mimic.setBackground(color);
+			panel.record(e.getActionCommand());
 		} else if (e.getActionCommand().equals("white")) {
 			color = color.white;
 			panel.setColor(color);
 			mimic.setBackground(color);			
+			panel.record(e.getActionCommand());
 		} else if(e.getActionCommand().equals("Brown")){
 			color = new Color(153,76,0);//brown
 			panel.setColor(color);
 			mimic.setBackground(color);
+			panel.record(e.getActionCommand());
 		} else if(e.getActionCommand().equals("DarkGreen")){
 			color = new Color(0,153,76); //darkGreen
 			panel.setColor(color);
 			mimic.setBackground(color);
+			panel.record(e.getActionCommand());
 		} else if (e.getActionCommand().equals("DarkPurple")){
 			color = new Color(102,0,102);
 			panel.setColor(color);
 			mimic.setBackground(color);
+			panel.record(e.getActionCommand());
+		} else if (e.getActionCommand().equals("Start")){
+			panel.startTime();
+		} else if (e.getActionCommand().equals("End")){
+			panel.endTime();
 		}
 
 	}

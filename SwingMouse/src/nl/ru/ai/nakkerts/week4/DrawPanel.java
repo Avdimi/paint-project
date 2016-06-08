@@ -19,6 +19,7 @@ public class DrawPanel extends JPanel {
 	private Color color, colorB;
 	private Random rand = new Random();
 	private int index = 0, size = 8, listIndex;
+	private ButtonPanel bp;
 	private int thickness;
 	private long startTime;
 	private long passedTime;
@@ -428,10 +429,11 @@ public class DrawPanel extends JPanel {
 	private void saveToText(ArrayList<Record> activityList2) {
 		try {
 			PrintWriter writer = new PrintWriter(Long.toString(System.currentTimeMillis()), "UTF-8");
+			writer.println("sep=,");
+			writer.println("Start Time,Time Since Last,Activity");
 			for (int i = 0; i < activityList2.size(); i++) {
 				Record temp = activityList2.get(i);
-				writer.println("StartTime: " + temp.getStartTime() + " PassedTime: " + temp.getPassedTime()
-						+ " Activity: " + temp.getActivity());
+				writer.println(temp.getStartTime() + "," + temp.getPassedTime()+ "," + temp.getActivity() );
 			}
 			writer.close();
 		} catch (FileNotFoundException e) {
@@ -452,6 +454,16 @@ public class DrawPanel extends JPanel {
 		Record rec = new Record(eventTime, passedTime, activity);
 		activityList.add(rec);
 		lastEventTime = eventTime;
+	}
+
+	
+	public void setBP(ButtonPanel bp) {
+		this.bp=bp;
+		
+	}
+	public void start2(){
+		bp.start();
+		repaint();
 	}
 	
 }

@@ -15,21 +15,23 @@ import javax.swing.JSlider;
 import javax.swing.event.ChangeListener;
 
 public class ButtonPanel extends JPanel {
+	private boolean start=false;
+	private JButton button1, button2, button3, button4, button5, button6, button7, button8, button9, button0,button11, button12;
 	public ButtonPanel(DrawPanel panel) {
-		super();
+		super();		
 
-		JButton button3 = new JButton("Rectangle");
-		JButton button4 = new JButton("Ellipse");
-		JButton button5 = new JButton("Line");
-		JButton button6 = new JButton("Move");
-		JButton button1 = new JButton("Fill");
-		JButton button7 = new JButton("To Front");
-		JButton button0 = new JButton("Remove");
-		JButton button9 = new JButton("Resize");
-		JButton button2 = new JButton("Borders");
-		JButton button12 = new JButton("Text");
-		JButton button11 = new JButton("Image");
-		JButton button8 = new JButton("To Back");
+		button3 = new JButton("Rectangle");
+		button4 = new JButton("Ellipse");
+		button5 = new JButton("Line");
+		button6 = new JButton("Move");
+		button1 = new JButton("Fill");
+		button7 = new JButton("To Front");
+		button0 = new JButton("Remove");
+		button9 = new JButton("Resize");
+		button2 = new JButton("Borders");
+		button12 = new JButton("Text");
+		button11 = new JButton("Image");
+		button8 = new JButton("To Back");
 	
 		
 		// het dropdown menu voor textsize
@@ -140,6 +142,35 @@ public class ButtonPanel extends JPanel {
 		button0.addActionListener(IH);
 		button11.addActionListener(IH);
 		button12.addActionListener(IHT);
-
+		
+		button1.setEnabled(start);
+		button2.setEnabled(start);
+		button3.setEnabled(start);
+		button4.setEnabled(start);
+		button5.setEnabled(start);
+		button6.setEnabled(start);
+		button7.setEnabled(start);
+		button8.setEnabled(start);
+		button9.setEnabled(start);
+		button0.setEnabled(start);
+		button11.setEnabled(start);
+		button12.setEnabled(start);
+						
+		}
+	public void start(){
+		this.start = true;
+		button1.setEnabled(start);
+		button2.setEnabled(start);
+		button3.setEnabled(start);
+		button4.setEnabled(start);
+		button5.setEnabled(start);
+		button6.setEnabled(start);
+		button7.setEnabled(start);
+		button8.setEnabled(start);
+		button9.setEnabled(start);
+		button0.setEnabled(start);
+		button11.setEnabled(start);
+		button12.setEnabled(start);
 	}
+	
 }

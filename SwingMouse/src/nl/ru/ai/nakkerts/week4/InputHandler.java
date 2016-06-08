@@ -30,7 +30,7 @@ public class InputHandler implements ActionListener {
 		}
 		panel.addMouseListener(new java.awt.event.MouseAdapter() {
 			public void mousePressed(java.awt.event.MouseEvent evt) {
-				
+				panel.record("Clicked to Place Rectangle");
 				x1 = evt.getX();
 				y1 = evt.getY();
 				//System.out.println(x1 + "   " + y1);
@@ -54,8 +54,7 @@ public class InputHandler implements ActionListener {
 		}
 		panel.addMouseListener(new java.awt.event.MouseAdapter() {
 			public void mousePressed(java.awt.event.MouseEvent evt) {
-		
-
+				panel.record("Clicked to Place Elipse");
 				x1 = evt.getX();
 				y1 = evt.getY();
 				index = panel.addEllipse(x1, y1, x1+5, y1+5);
@@ -89,7 +88,7 @@ public class InputHandler implements ActionListener {
 		}
 		panel.addMouseListener(new java.awt.event.MouseAdapter() {
 			public void mousePressed(java.awt.event.MouseEvent evt) {
-				
+				panel.record("Clicked to Place Line");
 				x1 = evt.getX();
 				y1 = evt.getY();
 				System.out.println("x1:" + x1 + " y1:" + y1);
@@ -113,6 +112,7 @@ public class InputHandler implements ActionListener {
 		}
 		panel.addMouseListener(new java.awt.event.MouseAdapter() {
 			public void mousePressed(java.awt.event.MouseEvent evt) {
+				panel.record("Clicked to Remove Shape");
 				double x = evt.getX();
 				double y = evt.getY();
 				panel.removeShapeAt(x, y);
@@ -126,25 +126,34 @@ public class InputHandler implements ActionListener {
 			placeRect();
 			// panel.addRectangle(x,y);
 		} else if (e.getActionCommand().equals("Ellipse")) { 
-			currentMode = Mode.ELLIPSE; // useless code
+			panel.record("Pressed Button: " + e.getActionCommand());			
 			placeEllipse();
 		} else if (e.getActionCommand().equals("Line")) { // set mode line
+			panel.record("Pressed Button: " + e.getActionCommand());
 			placeLine();
 		} else if (e.getActionCommand().equals("Fill")) { // set mode random
+			panel.record("Pressed Button: " + e.getActionCommand());
 			fillShape();			
 		} else if (e.getActionCommand().equals("To Front")) { // set mode modrandom
+			panel.record("Pressed Button: " + e.getActionCommand());
 			moveToFront();
 		} else if (e.getActionCommand().equals("Remove")) { // set mode remove 
+			panel.record("Pressed Button: " + e.getActionCommand());
 			removeClicked();
 		} else if (e.getActionCommand().equals("Resize")) { // set mode resize
+			panel.record("Pressed Button: " + e.getActionCommand());
 			changeShape();
 		} else if (e.getActionCommand().equals("Move")) { // set mode resize
+			panel.record("Pressed Button: " + e.getActionCommand());
 			moveClicked();
 		} else if (e.getActionCommand().equals("Borders")) { // set mode resize
+			panel.record("Pressed Button: " + e.getActionCommand());
 			setBorder();
 		} else if (e.getActionCommand().equals("Image")) {
+			panel.record("Pressed Button: " + e.getActionCommand());
 			placeImage();			
 		} else if (e.getActionCommand().equals("To Back")){
+			panel.record("Pressed Button: " + e.getActionCommand());
 			moveToBack();
 		}
 
@@ -155,6 +164,7 @@ public class InputHandler implements ActionListener {
 			removeListener();
 		panel.addMouseListener(new java.awt.event.MouseAdapter() {
 			public void mousePressed(java.awt.event.MouseEvent evt) {
+				panel.record("Clicked to Place Image");
 				x1 = evt.getX();
 				y1 = evt.getY();
 				JFileChooser fc = new JFileChooser();
@@ -177,6 +187,7 @@ public class InputHandler implements ActionListener {
 	if(true)removeListener(); // er komt waarschijnlijk nog wel iets anders dan true in de if
 	panel.addMouseListener(new java.awt.event.MouseAdapter() {
 		public void mousePressed(java.awt.event.MouseEvent evt) {
+			panel.record("Clicked to Fill Shape");
 			x1 = evt.getX();
 			y1 = evt.getY();
 			index = panel.getIndex(x1, y1);
@@ -192,6 +203,7 @@ public class InputHandler implements ActionListener {
 		}
 		panel.addMouseListener(new java.awt.event.MouseAdapter() {
 			public void mousePressed(java.awt.event.MouseEvent evt) {
+				panel.record("Clicked to Move to Front");
 				x1 = evt.getX();
 				y1 = evt.getY();
 				index = panel.getIndex(x1, y1);
@@ -210,6 +222,7 @@ public class InputHandler implements ActionListener {
 		}
 		panel.addMouseListener(new java.awt.event.MouseAdapter() {
 			public void mousePressed(java.awt.event.MouseEvent evt) {
+				panel.record("Clicked to Move to Back");
 				x1 = evt.getX();
 				y1 = evt.getY();
 				index = panel.getIndex(x1, y1);
@@ -228,6 +241,7 @@ public class InputHandler implements ActionListener {
 		}
 		panel.addMouseListener(new java.awt.event.MouseAdapter() {
 			public void mousePressed(java.awt.event.MouseEvent evt) {
+				panel.record("Clicked to change Borders");
 				x1 = evt.getX();
 				y1 = evt.getY();
 				index = panel.getIndex(x1, y1);
@@ -263,6 +277,7 @@ public class InputHandler implements ActionListener {
 		}
 		panel.addMouseListener(new java.awt.event.MouseAdapter() {
 			public void mousePressed(java.awt.event.MouseEvent evt) {
+				panel.record("Clicked to move a shape");
 				x1 = evt.getX();
 				y1 = evt.getY();
 				diffx = panel.getDiffX(x1, y1);
@@ -292,6 +307,7 @@ public class InputHandler implements ActionListener {
 		}
 		panel.addMouseListener(new java.awt.event.MouseAdapter() {
 			public void mousePressed(java.awt.event.MouseEvent evt) {
+				panel.record("Clicked to Resize");
 				x1 = evt.getX();
 				y1 = evt.getY();
 				index = panel.getIndex(x1, y1);

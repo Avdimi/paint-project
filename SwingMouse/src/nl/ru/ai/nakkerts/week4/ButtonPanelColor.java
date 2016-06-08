@@ -14,6 +14,8 @@ import javax.swing.JComboBox;
 import javax.swing.JPanel;
 
 public class ButtonPanelColor extends JPanel {
+	private JButton end;
+	private JButton start;
 	public ButtonPanelColor(DrawPanel panel) {
 		super();
 		Icon black = new ImageIcon("black.jpg");
@@ -34,8 +36,8 @@ public class ButtonPanelColor extends JPanel {
 		JButton button15 = new JButton();
 		JButton button16 = new JButton();
 		JButton button17 = new JButton();
-		JButton start 	= new JButton("Start");
-		JButton end		= new JButton("End");
+		start 	= new JButton("Start");
+		end		= new JButton("End");
 		
 		Dimension buttonDim = new Dimension(25, 25);
 		InputHandlerText IHT = new InputHandlerText(panel);
@@ -193,6 +195,11 @@ public class ButtonPanelColor extends JPanel {
 		button17.addActionListener(IHC);
 		start.addActionListener(IHC);
 		end.addActionListener(IHC);
+		end.setEnabled(false);
 
+	}
+	public void start(){
+		start.setEnabled(false);
+		end.setEnabled(true);
 	}
 }

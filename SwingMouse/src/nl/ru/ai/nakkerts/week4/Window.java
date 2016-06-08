@@ -26,11 +26,10 @@ public class Window extends JFrame {
 		rp.setBackground(new Color(255, 255, 255));
 		ButtonPanel bp = new ButtonPanel(rp);
 		ButtonPanelColor bpc = new ButtonPanelColor(rp);
-		// TextPanel tp = new TextPanel(rp);
 		getContentPane().add((Component) rp, "Center");
 		getContentPane().add((Component) bp, "West");
-		// getContentPane().add((Component)tp, "West");
 		getContentPane().add((Component) bpc, "North");
+		rp.setBP(bp);
 	}
 
 }

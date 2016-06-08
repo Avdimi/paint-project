@@ -114,6 +114,10 @@ public class InputHandlerNorth implements ActionListener {
 			panel.record(e.getActionCommand());
 		} else if (e.getActionCommand().equals("Start")){
 			panel.startTime();
+			panel.start2();
+			JButton button = (JButton) e.getSource();
+			ButtonPanelColor panie = (ButtonPanelColor) button.getParent();
+			panie.start();
 		} else if (e.getActionCommand().equals("End")){
 			panel.endTime();
 		}

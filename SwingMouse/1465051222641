@@ -1,0 +1,15 @@
+StartTime: 1824399572651003 PassedTime: 0 Activity: Start
+StartTime: 1824404700465093 PassedTime: 5127814090 Activity: Pressed Button: Fill
+StartTime: 1824405484450881 PassedTime: 783985788 Activity: yellow
+StartTime: 1824407756421689 PassedTime: 2271970808 Activity: Pressed Button: Move
+StartTime: 1824410136561890 PassedTime: 2380140201 Activity: Pressed Button: Ellipse
+StartTime: 1824411024712397 PassedTime: 888150507 Activity: red
+StartTime: 1824415148467718 PassedTime: 4123755321 Activity: Pressed Button: Fill
+StartTime: 1824416396590058 PassedTime: 1248122340 Activity: Brown
+StartTime: 1824419524503697 PassedTime: 3127913639 Activity: DarkPurple
+StartTime: 1824421548326878 PassedTime: 2023823181 Activity: Pressed Button: Line
+StartTime: 1824426532346916 PassedTime: 4984020038 Activity: Pressed Button: Line
+StartTime: 1824427356420729 PassedTime: 824073813 Activity: cyan
+StartTime: 1824436540390192 PassedTime: 9183969463 Activity: Pressed Button: To Front
+StartTime: 1824439092379885 PassedTime: 2551989693 Activity: Pressed End button
+StartTime: 1824439092379885 PassedTime: 39519728882 Activity: Total Time Since Start
